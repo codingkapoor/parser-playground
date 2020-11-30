@@ -3,6 +3,7 @@
 
 ## Dev
 1. To generate a fast optimized compiled version of the javascript file execute following command from Scala.js sbt plugin. The target file is generated under `js/target/scala-2.12` directory.
+
   ```
   $ sbt> fastOptJS
   ```
@@ -11,6 +12,7 @@
 
 ## Deploy
 1. To generate fully optimized version of the javascript file execute the following command from Scala.js sbt plugin. The target file is generated under `js/target/scala-2.12` directory. Note that this can take a while on a larger project (tens of seconds), which is why we typically don’t use fullOptJS during development. 
+
   ```
   $ sbt> fullOptJS
   ```
