@@ -2,12 +2,12 @@
 [Parser playground app](https://iamsmkr.github.io/parser-playground/) to demo usage of Scala library in javascript ecosystem using Scala.js
 
 ## Dev
-1. To generate a fast optimized compiled version of the javascript file execute following command from Scala.js sbt plugin. Please note that the size of this file is not suitable for deployment purposes.
+1. To generate a fast optimized compiled version of the javascript file execute following command from Scala.js sbt plugin.
 ```
 $ sbt> fastOptJS
 ```
 
-The target file is generated under `js/target/scala-2.12` directory.
+  The target file is generated under `js/target/scala-2.12` directory.
 
 2. Access `index-dev.html` on your browser to launch the app
 
@@ -17,7 +17,7 @@ The target file is generated under `js/target/scala-2.12` directory.
 $ sbt> fullOptJS
 ```
 
-The target file is generated under `js/target/scala-2.12` directory.
+  The target file is generated under `js/target/scala-2.12` directory.
 
 2. Access `index.html` on your browser to launch the app
 
