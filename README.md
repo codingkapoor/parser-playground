@@ -19,7 +19,7 @@
 
 2. Access `index.html` on your browser to launch the app
 
-**Refer**
+## Refer
 
 1. [Scala.js Basic tutorial](https://www.scala-js.org/doc/tutorial/basic/)
 2. [Scala.js Cross Building](https://www.scala-js.org/doc/project/cross-build.html)
