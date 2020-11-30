@@ -4,7 +4,7 @@ import com.iamsmkr.simplearithmeticparser.Parser._
 import org.scalajs.dom
 import org.scalajs.dom._
 import fastparse._
-import org.scalajs.dom.html.{Input, Label, TextArea}
+import org.scalajs.dom.html.TextArea
 
 object Validator {
 
