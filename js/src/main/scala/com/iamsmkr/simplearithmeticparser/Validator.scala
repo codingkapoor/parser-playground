@@ -14,7 +14,7 @@ object Validator {
     val editor = document.getElementById("editor").asInstanceOf[TextArea]
     val results = document.getElementById("results").asInstanceOf[TextArea]
 
-    def reparse(newValue: String, parser: P[_] => P[Any] = num(_)): Unit = {
+    def reparse(newValue: String, parser: P[_] => P[Any] = expr(_)): Unit = {
       parse(newValue, parser) match {
         case s: fastparse.Parsed.Success[_] =>
           results.value = "Parsed Successfully!"

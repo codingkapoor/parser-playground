@@ -7,12 +7,16 @@ object Parser {
     CharsWhileIn(" ", 0)
   }
 
-  def fp[_: P]: P[Unit] = P(CharIn("0-9").rep(1) ~ (CharIn(".") ~ CharIn("0-9").rep(1)).rep)
+  def num[_: P]: P[Unit] = P(CharIn("0-9").rep(1) ~ (CharIn(".") ~ CharIn("0-9").rep(1)).rep)
 
-  def num2[_: P]: P[Unit] = P("(" ~ num ~ ")" | fp)
+  def factor[_: P]: P[Unit] = P(num | "(" ~ expr ~ ")")
 
-  def num1[_: P]: P[Unit] = P(num2 ~ (CharIn("*/") ~/ num2).rep)
+  def term1[_: P]: P[Unit] = P((CharIn("*/") ~/ factor).rep)
 
-  def num[_: P]: P[Unit] = P(num1 ~ (CharIn("+\\-") ~/ num1).rep ~ End)
+  def term[_: P]: P[Unit] = P(factor ~ term1)
+
+  def expr1[_: P]: P[Unit] = P((CharIn("+\\-") ~/ term).rep)
+
+  def expr[_: P]: P[Unit] = P(term ~ expr1 ~ End)
 
 }
