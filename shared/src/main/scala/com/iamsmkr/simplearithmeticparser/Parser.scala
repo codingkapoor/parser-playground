@@ -1,8 +1,12 @@
 package com.iamsmkr.simplearithmeticparser
 
-import fastparse._, MultiLineWhitespace._
+import fastparse._
 
 object Parser {
+
+  implicit val ws: P[_] => P[Unit] = { implicit ctx: ParsingRun[_] =>
+    CharsWhileIn(" ", 0)
+  }
 
   def num[_: P]: P[Unit] = P(CharIn("0-9").rep(1) ~ (CharIn(".") ~ CharIn("0-9").rep(1)).rep)
 
